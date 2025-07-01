@@ -20,6 +20,12 @@ public class EnglishClassLevelServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// 自動重新導向到 "/JavaWeb/english_class_levels.html"	
+		resp.sendRedirect("/JavaWeb/english_class_levels.html");
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 接收資料
 		String name = req.getParameter("name");
 		String country = req.getParameter("country");
@@ -61,7 +67,8 @@ public class EnglishClassLevelServlet extends HttpServlet {
 			resp.getWriter().print("</li>");
 		}
 		resp.getWriter().print("</ol>");
-			
+		// 回上一頁
+		resp.getWriter().print("<a href='JavaWeb/english_class_levels.html'>回上頁</a>");
 		
 	}
 	
