@@ -5,7 +5,7 @@
 <%
 	// 接收 servlet 傳來的資料
 	Student student = (Student)request.getAttribute("student");
-	List<Student> students = (List)request.getAttribute("students");
+	List<Student> students = (List<Student>)request.getAttribute("students");
 %>    
     
 <!DOCTYPE html>
@@ -34,10 +34,11 @@
 		 					<th>編號</th><th>姓名</th><th>國別</th><th>年齡</th><th>程度</th>
 		 				</tr>
 		 			</thead>
-		 			<% for(int i=1;i<students.size();i++) {
+		 			<tbody>
+		 			<% for(int i=0;i<students.size();i++) {
 		 			       Student st = students.get(i);  %>
 							<tr>
-								<td><%=i %></td>
+								<td><%=i+1 %></td>
 								<td><%=st.getName() %></td>
 								<td><%=st.getCountry() %></td>
 								<td><%=st.getAge() %></td>
