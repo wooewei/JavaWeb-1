@@ -19,6 +19,15 @@ public class JapaneseClassLevelServlet extends HttpServlet {
 	//InMemory 集合
 	private static List<Student> students = new CopyOnWriteArrayList<>();
 	
+	static {  // 加入預設資料
+		students.add(new Student("John","TW",18,"N3"));
+		students.add(new Student("Mary","US",19,"N2"));
+		students.add(new Student("Jack","CN",20,"N4"));
+		students.add(new Student("Rose","KR",21,"N5"));
+		students.add(new Student("Helen","TW",19,"N1"));
+		
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 自動重新導向到 "/JavaWeb/english_class_levels.html"	
